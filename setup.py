@@ -18,7 +18,7 @@ if sys.platform == "win32":
 # Create the executable
 executables = [
     Executable(
-        "kharazmi/claude.py",  # Your main script
+        "claude.py",  # Your main script (updated path)
         base=base,
         target_name="WeatherApp.exe",  # Name of the executable
         icon="weather_icon.ico",  # Optional: path to your icon file

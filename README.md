@@ -12,7 +12,15 @@ A beautiful, modern weather application with a dark-themed UI that displays curr
 
 ## Installation
 
-### Option 1: Using the Installer (Recommended)
+### Option 1: Standalone Executable (Easiest)
+
+1. Run the `create_single_exe.bat` file by double-clicking it
+2. Wait for the process to complete
+3. Find the `WeatherApp.exe` file in the root directory
+4. Double-click the executable to run the application - no installation needed!
+5. You can copy this single .exe file to any Windows computer and it will run without installation
+
+### Option 2: Using the MSI Installer
 
 1. Run the `build_installer.bat` file by double-clicking it
 2. Follow the prompts to install the required dependencies and build the installer
@@ -20,7 +28,7 @@ A beautiful, modern weather application with a dark-themed UI that displays curr
 4. Run the `.msi` installer file and follow the installation wizard
 5. The application will be installed and a shortcut will be created on your desktop
 
-### Option 2: Manual Installation
+### Option 3: Manual Installation
 
 1. Install the required dependencies:
    ```
@@ -32,13 +40,13 @@ A beautiful, modern weather application with a dark-themed UI that displays curr
    python kharazmi/claude.py
    ```
 
-## Building the Installer Manually
+## Building the Executables Manually
 
-If you want to build the installer manually:
+### For Standalone EXE (PyInstaller)
 
-1. Install cx_Freeze:
+1. Install PyInstaller:
    ```
-   pip install cx_Freeze
+   pip install pyinstaller
    ```
 
 2. Create the application icon:
@@ -46,22 +54,36 @@ If you want to build the installer manually:
    python create_icon.py
    ```
 
-3. Build the executable:
+3. Build the standalone executable:
+   ```
+   pyinstaller --name=WeatherApp --onefile --windowed --icon=weather_icon.ico kharazmi/claude.py
+   ```
+
+4. The executable will be available in the `dist` folder
+
+### For MSI Installer (cx_Freeze)
+
+1. Install cx_Freeze:
+   ```
+   pip install cx_Freeze
+   ```
+
+2. Build the executable:
    ```
    python setup.py build
    ```
 
-4. Create the MSI installer:
+3. Create the MSI installer:
    ```
    python setup.py bdist_msi
    ```
 
-5. The installer will be available in the `dist` folder
+4. The installer will be available in the `dist` folder
 
 ## System Requirements
 
 - Windows 10 or later
-- Python 3.7 or later
+- No Python installation needed for the standalone executable or MSI installer
 - Internet connection (for weather data)
 
 ## License
