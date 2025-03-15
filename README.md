@@ -2,6 +2,9 @@
 
 A beautiful, modern weather application with a dark-themed UI that displays current weather conditions for any city.
 
+## A demo of app
+https://github.com/user-attachments/assets/bea76d9d-c7f7-4417-a37e-3c875ed76bc2
+
 ## Features
 
 - Modern dark-themed UI
